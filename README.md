@@ -1,5 +1,13 @@
 # gr4-studio
 
+> [!IMPORTANT]
+> This repository has moved.
+>
+> Active development has moved to: **https://github.com/gnuradio/gnuradio4-studio**
+>
+> This repository is retained for historical reference and will not receive future updates. Please open new issues, pull requests, and discussions in the new repository.
+
+
 `gr4-studio` is a browser and desktop Studio environment for GNU Radio 4. It is focused on building flowgraphs, running them through the GR4 control plane, and turning those running graphs into live applications.
 
 Studio is currently built around three main workflows:
