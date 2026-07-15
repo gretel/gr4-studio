@@ -213,10 +213,10 @@ describe("toGrctrlContentSubmission", () => {
 
 		const submission = toGrctrlContentSubmission(document);
 		expect(submission.content).toContain(
-			'- id: "gr::testing::NullSink<float32>"',
+			"- id: gr::testing::NullSink<float32>",
 		);
 		expect(submission.content).toContain(
-			'- id: "gr::testing::NullSource<float32>"',
+			"- id: gr::testing::NullSource<float32>",
 		);
 		expect(submission.content).toContain(
 			"name: gr__testing__NullSink_float32__5",
@@ -484,7 +484,7 @@ describe("toGrctrlContentSubmission", () => {
 		const submission = toGrctrlContentSubmission(document);
 
 		expect(submission.content).toContain(
-			'- id: "gr::studio::StudioPowerSpectrumSink<complex<float32>>"',
+			"- id: gr::studio::StudioPowerSpectrumSink<complex<float32>>",
 		);
 		expect(submission.content).toContain("payload_format: dataset-xy-json-v1");
 	});
@@ -805,7 +805,7 @@ describe("toGrctrlContentSubmission", () => {
 		const submission = toGrctrlContentSubmission(document);
 
 		expect(submission.content).toContain(
-			'- id: "gr::testing::NullSource<float32>"',
+			"- id: gr::testing::NullSource<float32>",
 		);
 		expect(submission.content).not.toContain(NOTE_BLOCK_TYPE);
 		expect(submission.content).not.toContain("This is a note.");

@@ -501,7 +501,7 @@ function serializeGraphDocumentToInlineGrc(
 		lines.push(...indent(["[]"]));
 	} else {
 		nodes.forEach((node) => {
-			lines.push(...indent([`- id: ${sanitizeScalar(node.blockType)}`]));
+			lines.push(...indent([`- id: ${node.blockType}`]));
 			lines.push(...indent([`  parameters:`]));
 			lines.push(...indent([`    name: ${sanitizeScalar(node.id)}`]));
 

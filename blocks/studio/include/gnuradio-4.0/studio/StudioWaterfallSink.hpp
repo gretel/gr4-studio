@@ -31,6 +31,7 @@
 #include <gnuradio-4.0/algorithm/fourier/fft.hpp>
 #include <gnuradio-4.0/algorithm/fourier/fft_common.hpp>
 #include <gnuradio-4.0/algorithm/fourier/window.hpp>
+#include <gnuradio-4.0/MemoryAllocators.hpp>
 #include <gnuradio-4.0/studio/StudioWebSocketTransport.hpp>
 
 namespace gr::studio {
@@ -422,8 +423,8 @@ private:
     gr::algorithm::window::Type _windowType = gr::algorithm::window::Type::BlackmanHarris;
     fft_type _fftImpl{};
     std::vector<value_type> _window{};
-    std::vector<T> _fftInput{};
-    std::vector<complex_type> _fftOutput{};
+    std::vector<T, gr::allocator::Aligned<T>> _fftInput{};
+    std::vector<complex_type, gr::allocator::Aligned<complex_type>> _fftOutput{};
     std::vector<value_type> _currentSpectrum{};
     std::vector<value_type> _spectrumSum{};
     std::vector<value_type> _averagedSpectrum{};
