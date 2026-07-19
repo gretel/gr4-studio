@@ -26,6 +26,11 @@ function sanitizeScalar(value: JsonPrimitive): string {
     return '""';
   }
 
+  if (typeof value === 'number' && !Number.isFinite(value)) {
+    // NaN, Infinity, -Infinity are not valid YAML/backend values
+    return '""';
+  }
+
   const raw = typeof value === 'string' ? value : String(value);
   const trimmed = raw.trim();
   if (!trimmed) {
@@ -381,6 +386,11 @@ function shouldOmitParameter(name: string, rawValue: JsonPrimitive | undefined):
   }
 
   if (rawValue === null || rawValue === undefined) {
+    return true;
+  }
+
+  if (typeof rawValue === 'number' && !Number.isFinite(rawValue)) {
+    // NaN, Infinity, -Infinity are not valid backend values
     return true;
   }
 
